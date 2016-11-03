@@ -12,13 +12,13 @@ var elixir = require('laravel-elixir');
  */
 
 // Set assets path
-elixir.config.publicPath = 'public/application/themes/wmylplate/assets';
+elixir.config.publicPath = 'public/application/themes/betong/assets';
 
 elixir(function (mix) {
     mix.sass('app.scss');
     mix.browserify('app.js');
 
     // mix.browserSync({
-    //     proxy: 'wmyplate.dev'
+    //     proxy: 'betong.dev'
     // });
 });
