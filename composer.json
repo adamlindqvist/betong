@@ -16,5 +16,8 @@
       "mv tmp/concrete*/concrete public/concrete",
       "rm -rf tmp && rm latest.zip"
     ]
+  },
+  "config": {
+    "preferred-install": "dist"
   }
 }
