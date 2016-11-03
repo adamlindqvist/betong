@@ -47,6 +47,4 @@ public/application/config/doctrine/
 public/application/config/generated_overrides/concrete.php
 
 # ignore compiled files
-public/application/themes/wmylplate/assets/
-
-.env
+public/application/themes/betong/assets/
