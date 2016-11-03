@@ -1,0 +1,20 @@
+{
+  "name": "adamlindqvist/betong",
+  "description": "Concrete5 CMS Boilerplate for spinning up new projects.",
+  "license": "MIT",
+  "require": {
+    "php": ">=5.6",
+    "illuminate/support": "5.3.*"
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "@composer c5:install"
+    ],
+    "c5:install": [
+      "curl -kLo ./latest.zip 'https://concrete5.org/latest.zip'",
+      "unzip latest.zip -d tmp",
+      "mv tmp/concrete*/concrete public/concrete",
+      "rm -rf tmp && rm latest.zip"
+    ]
+  }
+}

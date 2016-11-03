@@ -1,0 +1,52 @@
+# ignore system files
+.DS_Store
+thumbs.db
+__MACOSX
+._*
+.idea/
+
+# ignore concret5 folder
+public/concrete
+vendor/
+
+# ignore the site.php
+public/config/site.php
+
+#ignore everything but the index.html
+public/files/*
+public/!files/index.html
+
+# ignore updates folder
+updates/*
+
+# ignore sitemap.xml
+sitemap.xml
+
+# ignore the error log and .htaccess and others
+error_log
+.ftpquota
+/.idea/
+
+# ignore Aptana and Eclipse project files
+.project
+
+# ignore Eclipse-specific files
+/.settings/
+/.buildpath
+
+# ignore build tools
+bower_components/
+.sass-cache
+node_modules/
+
+# ignore cache files
+public/application/files/cache/*/*
+public/application/files/cache/
+public/application/files/
+public/application/config/doctrine/
+public/application/config/generated_overrides/concrete.php
+
+# ignore compiled files
+public/application/themes/wmylplate/assets/
+
+.env
