@@ -48,7 +48,7 @@ For more information about Elixir please visit the [official document page](http
 
     
 ## Package boilerplate
-Betong ships with a example package which contains code for how to accomplish common tasks directly from the code:
+Betong ships with a example package which contains code to accomplish common tasks directly from the code:
 - Install pagetypes
 - Install pagetemplates
 - Install custom-blocks
