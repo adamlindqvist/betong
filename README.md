@@ -8,9 +8,54 @@ A modern Concrete5 starting point. Trying to make it as easy as possible to get 
     composer create-project adamlindqvist/betong --stability dev
     
 ## Features
-- Gulp with laravel elixir
-- PHP helpers
-- etc.
+- Gulp with Laravel Elixir
+- Clean project structure
+- Package boilerplate
+- Theme boilerplate
+- PHP Helpers
+
+## Gulp
+
+Beton has integrated [Elixir](https://laravel.com/docs/5.3/elixir). It provides a clean, fluent API for defining basic Gulp tasks for your WordPlate application.
+
+#### Installation
+
+Before triggering Elixir, you must first ensure that [Node.js](https://nodejs.org/en/) is installed on your machine.
+
+```sh
+node -v
+```
+
+If you don't have Node on your machine you can install it by visiting their [download page](https://nodejs.org/download/).
+
+Within a fresh installation of Betong, you'll find a `package.json` file in the root. Think of this like your `composer.json` file, except it defines Node dependencies instead of PHP. You may install the dependencies it references by running:
+
+```sh
+npm install
+```
+
+If you are developing on a Windows system or you are running your VM on a Windows host system, you may need to run the `npm install` command with the `--no-bin-links` switch enabled:
+
+```sh
+npm install --no-bin-links
+```
+
+#### Usage
+
+To use Elixir and Gulp, please run one of the following commands:
+
+For more information about Elixir please visit the [official document page](https://laravel.com/docs/5.3/elixir).
+
+    
+## Package boilerplate
+Betong ships with a example package which contains code for how to accomplish common tasks directly from the code:
+- Install pagetypes
+- Install pagetemplates
+- Install custom-blocks
+- Install attributes
+- Install composer-fields and attach them to a pagetype
+
+See the controller.php in `public/package/betong/controller.php`
 
 
 ## Helpers
