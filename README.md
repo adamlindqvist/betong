@@ -16,7 +16,7 @@ A modern Concrete5 starting point. Trying to make it as easy as possible to get 
 
 ## Gulp
 
-Beton has integrated [Elixir](https://laravel.com/docs/5.3/elixir). It provides a clean, fluent API for defining basic Gulp tasks for your WordPlate application.
+Betong has integrated [Elixir](https://laravel.com/docs/5.3/elixir). It provides a clean, fluent API for defining basic Gulp tasks for your WordPlate application.
 
 #### Installation
 
