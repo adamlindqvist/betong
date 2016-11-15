@@ -7,7 +7,7 @@
     "illuminate/support": "5.3.*"
   },
   "scripts": {
-    "post-create-project-cmd": [
+    "post-root-package-install": [
       "@composer c5:install"
     ],
     "c5:install": [
