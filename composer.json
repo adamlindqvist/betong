@@ -1,6 +1,9 @@
 {
   "name": "adamlindqvist/betong",
   "description": "Concrete5 CMS Boilerplate for spinning up new projects.",
+    "keywords": [
+        "Concrete5", "Concrete5 CMS", "boilerplate", "Concrete5boilerplate", "Concete5 boilerplate"
+    ],
   "license": "MIT",
   "require": {
     "php": ">=5.6",
@@ -10,6 +13,7 @@
     "post-root-package-install": [
       "@composer c5:install"
     ],
+    "post-create-project-cmd": [],
     "c5:install": [
       "curl -kLo ./latest.zip 'https://concrete5.org/latest.zip'",
       "unzip latest.zip -d tmp",
