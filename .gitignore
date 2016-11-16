@@ -5,7 +5,7 @@ __MACOSX
 ._*
 .idea/
 
-# ignore concret5 folder
+# ignore vendor folder
 vendor/
 
 # ignore the site.php
