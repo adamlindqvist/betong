@@ -24,14 +24,13 @@ use Concrete\Core\Page\Type\Composer\Control\Type\BlockType as ComposerBlockType
 use Concrete\Core\Page\Type\Composer\FormLayoutSet;
 use Concrete\Core\Page\Type\Composer\FormLayoutSetControl;
 use Concrete\Core\Page\Type\Type as PageType;
+use  \Concrete\Core\Package\Package as Package;
 use Exception;
 use Loader;
-use Package;
 use Route;
 
 class Controller extends Package
 {
-
     protected $pkgHandle = 'betong';
     protected $appVersionRequired = '5.7.5.9';
     protected $pkgVersion = '0.0.1';
@@ -41,6 +40,7 @@ class Controller extends Package
 
     public function on_start()
     {
+        // Register custom routes CMS boot up.
         $this->registerRoutes();
     }
 
@@ -54,6 +54,11 @@ class Controller extends Package
         return t("Betong");
     }
 
+    /**
+     * The packages install routine.
+     *
+     * @return void
+     */
     public function install()
     {
         $pkg = parent::install();
@@ -61,6 +66,11 @@ class Controller extends Package
         $this->installOrUpgrade($pkg);
     }
 
+    /**
+     * The packages upgrade routine.
+     *
+     * @return void
+     */
     public function upgrade()
     {
         parent::upgrade();
@@ -70,6 +80,23 @@ class Controller extends Package
         $this->installOrUpgrade($pkg);
     }
 
+    /**
+     * The packages uninstall routine.
+     *
+     * @return void
+     */
+    public function uninstall()
+    {
+        // Add your custom logic here that needs to be executed BEFORE package uninstall.
+        parent::uninstall();
+        // Add your custom logic here that needs to be executed AFTER package uninstall.
+    }
+
+    /**
+     * Install or upgrade all custom package installs.
+     *
+     * @param $pkg Package
+     */
     private function installOrUpgrade($pkg)
     {
         $this->installAttributes($pkg);
@@ -82,16 +109,31 @@ class Controller extends Package
         $this->installFileSets($pkg);
     }
 
+    /**
+     * Install custom block types.
+     *
+     * @param $pkg Package
+     */
     private function installBlockTypes($pkg)
     {
         //$this->installBlockType('hero', $pkg);
     }
 
+    /**
+     * Install custom page types.
+     *
+     * @param $pkg Package
+     */
     public function installPageTypes($pkg)
     {
-        //$this->installPageType('team_member', 'Team Member', true, 'default', $pkg);
+        //$this->installPageType('custom_page_type_handle', 'Custom page type name', true, 'default', $pkg);
     }
 
+    /**
+     * Install custom attributes.
+     *
+     * @param $pkg Package
+     */
     public function installAttributes($pkg)
     {
         $attributeSet = $this->installAttributeSet($pkg);
@@ -99,16 +141,29 @@ class Controller extends Package
         //$this->installImageAttribute($pkg, $attributeSet, 'header_image', 'Header image');
     }
 
+    /**
+     *  Install custom pages.
+     *
+     * @param $pkg Package
+     */
     private function installPages($pkg)
     {
-        //SinglePage::add('/dashboard/mail/', $pkg);
+        //SinglePage::add('/dashboard/custom_dashboard_page/', $pkg);
     }
 
+    /**
+     * Install custom page templates.
+     *
+     * @param $pkg Package
+     */
     private function installPageTemplates($pkg)
     {
         //$this->installPageTemplate('page_startpage', 'Startpage', $pkg);
     }
 
+    /**
+     * Register custom routes to a specific controller and action.
+     */
     private function registerRoutes()
     {
         //Route::register('/url',
@@ -116,24 +171,50 @@ class Controller extends Package
         //);
     }
 
+    /**
+     * Defines which composer fields to install.
+     *
+     * @param $pkg Package
+     */
     private function installComposerFields($pkg)
     {
-        //$this->installNewsItemFields($pkg);
+        //$this->installComposerField($pkg);
     }
 
-      private function installFileSets($pkg)
+    /**
+     * Install and attach a composer field to a page type.
+     * Duplicate this function to add other custom composer fields.
+     *
+     * @param $pkg Package
+     */
+    private function installComposerField($pkg)
+    {
+        // $pt = PageType::getByHandle('page_type_handle');
+        // $formData = $this->addBasicFields($pt);
+        // $set = $formData["set"];
+        // $composerField = $this->getComposerCustomAttribute('custom_attribute_handle');
+        // $composerFieldControl = $this->addFormControl($set, $composerField, 'Composer field label');
+    }
+
+    /**
+     * Install custom filesets.
+     *
+     * @param $pkg Package
+     */
+    private function installFileSets($pkg)
     {
         //$this->installFileSet('Images');
     }
-
-    private function installNewsItemFields($pkg)
-    {
-        // $pt = PageType::getByHandle('page_news_item');
-        // $formData = $this->addBasicFields($pt);
-        // $set = $formData["set"];
-        // $newsImage = $this->getComposerCustomAttribute('news_item_image');
-        // $imageControl = $this->addFormControl($set, $newsImage, 'News image');
-    }
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Controller helper functions.
+    |--------------------------------------------------------------------------
+    |
+    | Beneath is the helper functions to make the custom installs
+    | above possible.
+    |
+    */
 
     private function installBlockType($blockTypeHandle, $pkg)
     {
