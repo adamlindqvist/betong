@@ -42,6 +42,20 @@ npm install --no-bin-links
 
 To use Elixir and Gulp, please run one of the following commands:
 
+##### Development
+
+```sh
+gulp watch
+```
+
+##### Production
+
+
+```sh
+gulp --production
+```
+
+
 For more information about Elixir please visit the [official document page](https://laravel.com/docs/5.3/elixir).
 
     
