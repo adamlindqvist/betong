@@ -6,8 +6,8 @@ var elixir = require('laravel-elixir');
  |--------------------------------------------------------------------------
  |
  | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your WordPlate application. By default, we are compiling the Sass
- | file for our application, as well as publishing vendor resources.
+ | for your Betong application. By default, we are compiling the Sass
+ | file for our application, as well as initiate browserify.
  |
  */
 
